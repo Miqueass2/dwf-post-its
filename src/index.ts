@@ -6,10 +6,11 @@ import { initHomePage } from "../pages/home"
 import {state} from "./state"
 
 (function () {
-   state.init();
-
-   headerEl();
-   initTodoItem();
    const div = document.querySelector(".root")!;
    initHomePage(div);
+   
+   headerEl();
+   initTodoItem();
+   state.init();
+   
 })();

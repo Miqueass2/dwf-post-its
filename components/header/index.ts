@@ -1,7 +1,7 @@
 export function headerEl() {
    
    class Header extends HTMLElement{
-      shadowRoot: ShadowRoot | null;
+      /* shadowRoot: ShadowRoot | null; */
       shadow = this.attachShadow({ mode: 'open' });
       constructor() {
          super();

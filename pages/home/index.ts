@@ -26,6 +26,7 @@ export function initHomePage(container: Element) {
    function createTasks(itemTasks) {
       listEl.innerHTML = "";
       for (const tasks of itemTasks) {
+         console.log("im itemTasks",itemTasks)
          const todoItemEl = document.createElement('todo-card');
          todoItemEl.classList.add("container-todo")
          todoItemEl.setAttribute("title", tasks.title);
@@ -44,9 +45,10 @@ export function initHomePage(container: Element) {
 
 
    state.subscribe(() => {
-   createTasks(state.getEnabledTasks());   
+      createTasks(state.getEnabledTasks());   
 
    })
+   
    createTasks(tasks); 
    
 

@@ -12,9 +12,9 @@ export function initTodoItem() {
       connectedCallback() {
 
          this.title = this.getAttribute("title") || "";
-
+         
          this.checked = this.hasAttribute("checked");
-
+         
          this.id = this.getAttribute("id")!;
       
          this.render();
@@ -86,9 +86,9 @@ export function initTodoItem() {
          
          
          </div>
+         
          ${this.checked ? `<div class="img-trash">
          <img id="trashId" class="trash" src="${trashImage}">
-         
       </div>`:""}
          `;
          const selectDivBorder:any = this.shadow.querySelector(".card");

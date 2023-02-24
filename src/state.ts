@@ -17,14 +17,19 @@ export const state = {
       const currentState = this.getState();
       //el signo ! funciona como un if negativo,
       //!t.deleted = si no tiene deleted false pasa el filtro, pero si tiene !deleted true no pasa.
-      return currentState.tasks.filter((t) => !t.deleted)
+      //en este caso deleted inicia como true, entonces filtra los que son false
+      /* this.setState(currentState) */
+      return currentState.tasks.filter((t) => !t.deleted);
    },
    setState(newState) {
+      console.log("before",this.data);
       this.data = newState;
+      console.log("after",this.data);
+      
       for (const cb of this.listeners) {
-         cb(newState);
+         cb();
       }
-      console.log("soy el state, i change", this.data);
+      console.log("im state, i change", this.data);
       localStorage.setItem("saved-state", JSON.stringify(newState))
    },
    subscribe(callback: (any) => any) {
